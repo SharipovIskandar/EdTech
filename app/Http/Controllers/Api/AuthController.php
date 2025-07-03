@@ -17,6 +17,10 @@ class AuthController extends Controller
         if(!$user || !Hash::check($request->password, $user->password)){
             return error_response('Login or password is incorrect');
         }
+        $user->api_token = Str::random(10);
+        $user->save();
+
+        return success_response(['message' => __('')]);
     }
     public function register(RegisterRequest $request) {}
 }
