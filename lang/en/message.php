@@ -1,0 +1,37 @@
+<?php
+
+return [
+    'Not found' => 'Not found',
+    'Not delete' => 'Cannot be deleted due to associated data',
+    'Successfully updated' => 'Successfully updated',
+    'Successfully created' => 'Successfully created',
+    'Successfully stored' => 'Successfully stored',
+    'Successfully imported' => 'Successfully imported',
+    'Successfully deleted' => 'Successfully deleted',
+    'Successfully' => 'Successfully',
+    'Unsuccessfully' => 'Unsuccessfully',
+    'Nothing found' => 'Nothing found',
+    'Confirm' => 'Confirm',
+    'Yes, delete it!' => 'Yes, delete it!',
+    'Are you sure?' => 'Are you sure?',
+    'You wont be able to revert this!' => 'You won’t be able to revert this!',
+    'No such language exists in the system' => 'No such language exists in the system',
+    'Something went wrong!' => 'Something went wrong!',
+    'Too many attempts' => 'Too many attempts',
+    'Already verification' => 'You have already been verified',
+    'Other send otp' => 'A verification code has been sent to another device',
+    'Wrong verification' => 'Verification code is incorrect or expired',
+    'Forbidden area' => '☠ Forbidden area',
+    'Already attach device token' => 'A device is attached to this token',
+    'Choose' => 'Choose',
+    'Cannot delete because this degree is being used by other data' => 'Cannot delete because this degree is being used by other data',
+    'Are you sure' => 'Are you sure?',
+    'You cannot restore this data back' => 'You cannot restore this data back',
+    'Yes delete' => 'Yes delete',
+    'Cancel' => 'Cancel',
+    "Confirm task" => "Do you really want to confirm this task?",
+    "Revert task" => "Do you really want to revert this task?",
+    'Type at least 1 character' => 'Type at least 1 character',
+
+
+];

@@ -1,0 +1,37 @@
+<?php
+
+return [
+    'Not found' => 'Topilmadi',
+    'Not delete' => "Tegishli ma'lumotlar bo'lganligi uchun o'chirib bo'lmaydi",
+    'Successfully updated' => 'Muvaffaqiyatli yangilandi',
+    'Successfully created' => 'Muvaffaqiyatli yaratildi',
+    'Successfully stored' => 'Muvaffaqiyatli saqlandi',
+    'Successfully imported' => 'Muvaffaqiyatli import qilindi',
+    'Successfully deleted' => "Muvaffaqiyatli o'chirildi",
+    'Successfully' => 'Muvaffaqiyatli',
+    'Unsuccessfully' => 'Muvaffaqiyatsiz',
+    'Nothing found' => 'Hech narsa topilmadi',
+    'Confirm' => 'Tasdiqlash',
+    'Yes, delete it!' => 'Ha, o\'chirish!',
+    'Are you sure?' => 'Ishonchingiz komilmi?',
+    'You wont be able to revert this!' => 'Buni qaytara olmaysiz!',
+    'No such language exists in the system' => 'Tizimda bunday til mavjud emas',
+    'Something went wrong!' => 'Nimadir noto\'g\'ri bajaraildi!',
+    'Too many attempts' => 'Juda koʻp urinishlar',
+    'Already verification' => 'Siz verifikatsiyadan o\'tkansiz',
+    'Other send otp' => 'Boshqa qurilmangizga tasdiqlash kodi yuborilgan',
+    'Wrong verification' => 'Tasdiqlash kodi xato yoki muddati tugagan',
+    'Forbidden area' => '☠ Taqiqlangan hudud',
+    'Already attach device token' => 'Bu tokenga qurilma biriktirilgan',
+    'Choose' => 'Tanlang',
+    'Cannot delete because this degree is being used by other data' => "Bu darajani o‘chirib bo‘lmaydi, chunki u boshqa ma’lumotlar bilan bog‘langan.",
+    'Are you sure' => 'Ishonchingiz komilmi?',
+    'You cannot restore this data back' => "Ushbu ma’lumotlarni qayta tiklab b'lmaydi !",
+    'Yes delete' => "Ha, o'chirish",
+    'Cancel' => 'Bekor qilish',
+    "Confirm task" => "Ushbu vazifani tasdiqlamoqchimisiz?",
+    "Revert task" => "Haqiqatdan ham ushbu vazifani qaytarmoqchimisiz?",
+    'Type at least 1 character' => 'Введите минимум 1 символ',
+
+
+];
