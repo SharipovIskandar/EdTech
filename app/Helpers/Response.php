@@ -1,7 +1,5 @@
 <?php
 
-<?php
-
 function success_response($result, int $code = 200, $errors = null, $extra = null)
 {
     return response()->json(

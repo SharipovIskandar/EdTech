@@ -2,39 +2,60 @@
 
 namespace App\Http\Controllers\Api;
 
+use Illuminate\Validation\ValidationException;
 use App\Http\Requests\Api\RegisterRequest;
 use App\Http\Requests\Api\AuthRequest;
-use App\Http\Controllers\Controller;
 use Illuminate\Support\Facades\Hash;
-use Illuminate\Support\Str;
+use App\Http\Controllers\Controller;
+use Illuminate\Http\Request;
 use App\Models\User;
 
 class AuthController extends Controller
 {
-    public function login(AuthRequest $request)
-    {
-        $user = User::where('email', $request->email)->first();
-        if (!$user || !Hash::check($request->password, $user->password)) {
-            return error_response('Login or password is incorrect');
-        }
-        $user->api_token = Str::random(10);
-        $user->save();
-
-        return success_response(['message' => __('message.Successfully')]);
-    }
     public function register(RegisterRequest $request)
     {
         $user = User::create([
-            'name' => $request->name,
-            'email' => $request->email,
+            'name'     => $request->name,
+            'email'    => $request->email,
             'password' => bcrypt($request->password),
-            'api_token' => Str::random(60),
         ]);
 
-        return success_response([
+        $token = $user->createToken('api-token')->plainTextToken;
+
+        return response()->json([
             'message' => __('message.Successfully'),
-            'token' => $user->api_token,
-            'user' => $user,
+            'token'   => $token,
+            'user'    => $user,
         ], 201);
+    }
+
+    public function login(AuthRequest $request)
+    {
+        $user = User::where('email', $request->email)->first();
+
+        if (! $user || ! Hash::check($request->password, $user->password)) {
+            throw ValidationException::withMessages([
+                'email' => [__('message.Invalid credentials')],
+            ]);
+        }
+
+        $user->tokens()->delete();
+
+        $token = $user->createToken('api-token')->plainTextToken;
+
+        return response()->json([
+            'message' => __('message.Successfully'),
+            'token'   => $token,
+            'user'    => $user,
+        ]);
+    }
+
+    public function logout(Request $request)
+    {
+        $request->user()->currentAccessToken()->delete();
+
+        return response()->json([
+            'message' => __('message.Logout successful'),
+        ]);
     }
 }
