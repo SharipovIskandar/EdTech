@@ -4,6 +4,7 @@ namespace App\Http\Controllers\Api;
 
 use App\Http\Controllers\Controller;
 use App\Http\Requests\Api\TopicStoreRequest;
+use App\Http\Requests\Api\TopicUpdateRequest;
 use App\Http\Resources\TopicResource;
 use App\Services\Topic\Contracts\iTopicService;
 use Illuminate\Http\Request;
@@ -24,7 +25,7 @@ class TopicController extends Controller
     {
         return new TopicResource($this->service->show($id));
     }
-    public function update(TopicStoreRequest $request, $id)
+    public function update(TopicUpdateRequest $request, $id)
     {
         $data = $this->service->update($id, $request);
         return new TopicResource($data);
