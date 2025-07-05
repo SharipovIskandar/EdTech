@@ -2,13 +2,11 @@
 
 namespace App\Http\Controllers\Api;
 
-use App\Http\Controllers\Controller;
-use App\Http\Requests\Api\SubjectRequest;
-use App\Http\Requests\Api\SubjectStoreRequest;
 use App\Http\Requests\Api\SubjectUpdateRequest;
-use App\Http\Resources\SubjectResource;
-use App\Models\Subject;
+use App\Http\Requests\Api\SubjectStoreRequest;
 use App\Services\Subject\SubjectService;
+use App\Http\Resources\SubjectResource;
+use App\Http\Controllers\Controller;
 use Illuminate\Http\Request;
 
 class SubjectController extends Controller

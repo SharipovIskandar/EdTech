@@ -15,7 +15,7 @@ class SubjectStoreRequest extends FormRequest
     {
         return [
             'name' => ['required', 'string'],
-            'code' => ['required', 'string', 'unique:subjects,code,' . $this->subject?->id],
+            'code' => ['required', 'string'],
         ];
     }
 }

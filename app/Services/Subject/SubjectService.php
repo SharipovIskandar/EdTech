@@ -13,7 +13,7 @@ class SubjectService implements iSubjectService
 
     public function index($request)
     {
-        return $this->modelClass::query()->customPaginate($request);
+        return $this->modelClass::query()->customPaginate(request: $request);
     }
 
     public function store($request)
