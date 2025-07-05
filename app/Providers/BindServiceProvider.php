@@ -2,6 +2,8 @@
 
 namespace App\Providers;
 
+use App\Services\QuestionType\Contracts\iQuestionTypeService;
+use App\Services\QuestionType\QuestionTypeService;
 use App\Services\Subject\Contracts\iSubjectService;
 use App\Services\Topic\Contracts\iTopicService;
 use App\Services\Subject\SubjectService;
@@ -23,6 +25,7 @@ class BindServiceProvider extends ServiceProvider
      */
     public function boot(): void
     {
+        $this->app->bind(iQuestionTypeService::class, QuestionTypeService::class);
         $this->app->bind(iSubjectService::class, SubjectService::class);
         $this->app->bind(iTopicService::class, TopicService::class);
     }
